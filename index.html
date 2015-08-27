@@ -11,6 +11,7 @@
     <meta name="apple-mobile-web-app-title" content="Rosie">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default-translucent">
 
   <!-- Compiled and minified JavaScript -->
 </head>
@@ -21,33 +22,34 @@
       <div class="navbar-fixed">
         <nav class="green">
           <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Rosie</a>
+            <a ui-sref="landing" class="brand-logo center" ui-view="title"></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li class="active"><a href="#">My List</a></li>
-              <li><a href="#">My Pantry</a></li>
-              <li><a href="#">My Recipes</a></li>
-              <li><a href="#">My Account</a></li>
+            <li class="active"><a ui-sref="landing">Dashboard</a></li>
+              <li><a ui-sref="list">My List</a></li>
+              <li><a ui-sref="pantry">My Pantry</a></li>
+              <li><a ui-sref="recipes">My Recipes</a></li>
+              <li><a ui-sref="account">My Account</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-              <li><a href="#">My List</a></li>
-              <li><a href="#">My Pantry</a></li>
-              <li><a href="#">My Recipes</a></li>
-              <li><a href="#">My Account</a></li>
+              <li class="active"><a ui-sref="landing">Dashboard</a></li>
+              <li><a ui-sref="list">My List</a></li>
+              <li><a ui-sref="pantry">My Pantry</a></li>
+              <li><a ui-sref="recipes">My Recipes</a></li>
+              <li><a ui-sref="account">My Account</a></li>
             </ul>
           </div>
         </nav>
       </div>
 
-      <ul class="collection">
-       <li class="collection-item" ng-repeat="item in genericList" ng-bind="item"></li>
-      </ul>
+      <div ui-view="mainArea"></div>
 
     </div>
     <!-- // <script src="../bower_components/jquery/dist/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- // <script src="../bower_components/angular/angular.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <!-- // <script src="../bower_components/materialize/dist/js/materialize.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
     <script src="app.js"></script>

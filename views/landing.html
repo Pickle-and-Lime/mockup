@@ -1,0 +1,43 @@
+<ul class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header"><i class="material-icons">view_list</i>Grocery Suggestions</div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">whatshot</i>What's In Season?</div>
+    <div class="collapsible-body container">
+      
+      <div class="row">
+        <div class="col s6 m4" ng-repeat="fruit in summer">
+          <div class="card blue-grey">
+            <div class="card-content white-text">
+              <span class="card-title" ng-bind="fruit"></span>
+            </div>
+            <div class="card-action">
+              <i class="material-icons left">not_interested</i>
+              <i class="material-icons right">done</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">place</i>Farmer's Markets Today</div>
+    <div class="collapsible-body">
+      <div ng-bind="todaysMarket.Name"></div>
+      <div ng-bind="todaysMarket.Address"></div>
+      <div ng-bind="todaysMarket.Products"></div>
+      <div ng-bind="todaysMarket.Schedule"></div>
+      <div><a ng-href="{{ todaysMarket.GoogleLink }}">Map</a></div>
+    </div>
+  </li>
+</ul>
+<script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : true // true for accordion style, false for expandable
+    });
+  });
+</script>
