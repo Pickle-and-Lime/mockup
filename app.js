@@ -2,11 +2,22 @@
 var groceries = angular.module( 'GroceriesApp', [] );
 
 groceries.controller("MainController", function($scope) {
-  $scope.text = 'Hello there';
+  
+  $scope.genericList = [
+    'Eggs',
+    'Bread',
+    'Milk',
+    'Cheese',
+    'Tomatoes',
+    'Kale',
+    'Tofu',
+    'Eggplant',
+    'Lettuce',
+    'Onions',
+    'Cereal',
+    'Rice',
+    'Chicken',
+    'Shrimp'
+  ];
 
-  $scope.values = ['one','two','three','four'];
-
-  $scope.log = function(item) {
-    console.log(item);
-  };
 });

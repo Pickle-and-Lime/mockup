@@ -7,6 +7,10 @@
     <!-- <link rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/icon-iphone.png">
+    <meta name="apple-mobile-web-app-title" content="Rosie">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
   <!-- Compiled and minified JavaScript -->
 </head>
@@ -35,36 +39,9 @@
         </nav>
       </div>
 
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
-      <p class="flow-text">Hi</p>
+      <ul class="collection">
+       <li class="collection-item" ng-repeat="item in genericList" ng-bind="item"></li>
+      </ul>
 
     </div>
     <!-- // <script src="../bower_components/jquery/dist/jquery.min.js"></script> -->
