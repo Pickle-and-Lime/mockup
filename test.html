@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+      var test = function(state, month) {
+        $.ajax({
+          type:"GET",
+          // data:{state:state,month:month,sort:"name_"},
+          url: "http://www.sustainabletable.org/seasonalfoodguide/getState.php?state=" + state + "&month=" + month,
+          success:function(data){
+            $('#state_info').html(data);
+           console.log(data);
+            // $(window).scrollTop($('#result_table').offset().top - 115);
+            // $()
+            // $('#select_season').val(month);
+          },
+          error: function(xhr, textStatus, error){
+             alert(xhr.statusText);
+             alert(textStatus);
+             alert(error);
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="test('California','Late August')">Click</button>
+    <div id="state_info"></div>
+  </body>
+</html>

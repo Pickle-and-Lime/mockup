@@ -22,27 +22,72 @@
       <div class="navbar-fixed">
         <nav class="green">
           <div class="nav-wrapper">
-            <a ui-sref="landing" class="brand-logo center" ui-view="title"></a>
+            <a ui-sref="landing" class="brand-logo" ui-view="title">Rosie</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-            <li class="active"><a ui-sref="landing">Dashboard</a></li>
-              <li><a ui-sref="list">My List</a></li>
-              <li><a ui-sref="pantry">My Pantry</a></li>
-              <li><a ui-sref="recipes">My Recipes</a></li>
-              <li><a ui-sref="account">My Account</a></li>
+            <li><a ui-sref="landing">Dashboard</a></li>
+              <li><a ui-sref="list">List</a></li>
+              <li><a ui-sref="pantry">Pantry</a></li>
+              <li><a ui-sref="recipes">Recipes</a></li>
+              <li><a ui-sref="household">Household</a></li>
+              <li><a ui-sref="account">Account</a></li>
+              <li><a ui-sref="about">About Rosie</a></li>
+              <li><a ui-sref="logout">Logout</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-              <li class="active"><a ui-sref="landing">Dashboard</a></li>
-              <li><a ui-sref="list">My List</a></li>
-              <li><a ui-sref="pantry">My Pantry</a></li>
-              <li><a ui-sref="recipes">My Recipes</a></li>
-              <li><a ui-sref="account">My Account</a></li>
+              <li><a ui-sref="landing">Dashboard</a></li>
+              <li><a ui-sref="list">List</a></li>
+              <li><a ui-sref="pantry">Pantry</a></li>
+              <li><a ui-sref="recipes">Recipes</a></li>
+              <li><a ui-sref="household">Household</a></li>
+              <li><a ui-sref="account">Account</a></li>
+              <li><a ui-sref="about">About Rosie</a></li>
+              <li><a ui-sref="logout">Logout</a></li>
             </ul>
           </div>
         </nav>
       </div>
 
-      <div ui-view="mainArea"></div>
+      <div ui-view="mainArea">
+        
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">speaker_notes</i>You Might Need...</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>What's In Season?</div>
+            <div class="collapsible-body container">
+              
+              <div class="row">
+                <div class="col s6 m4" ng-repeat="fruit in summer">
+                  <div class="card blue-grey">
+                    <div class="card-content white-text">
+                      <span class="card-title" ng-bind="fruit"></span>
+                    </div>
+                    <div class="card-action">
+                      <i class="material-icons left">not_interested</i>
+                      <i class="material-icons right">done</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Farmer's Markets Today</div>
+            <div class="collapsible-body">
+              <div ng-bind="todaysMarket.Name"></div>
+              <div ng-bind="todaysMarket.Address"></div>
+              <div ng-bind="todaysMarket.Products"></div>
+              <div ng-bind="todaysMarket.Schedule"></div>
+              <div><a ng-href="{{ todaysMarket.GoogleLink }}">Map</a></div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
 
     </div>
     <!-- // <script src="../bower_components/jquery/dist/jquery.min.js"></script> -->
@@ -53,9 +98,17 @@
     <!-- // <script src="../bower_components/materialize/dist/js/materialize.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
     <script src="app.js"></script>
+    <script src="controllers/listController.js"></script>
     <script>
       $(document).ready(function(){
-        $(".button-collapse").sideNav();
+        $('.button-collapse').sideNav({
+          menuWidth: 240, // Default is 240
+          edge: 'left', // Choose the horizontal origin
+          closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        });
+        $('.collapsible').collapsible({
+              accordion : true // true for accordion style, false for expandable
+            });
       });
     </script>
 

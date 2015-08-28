@@ -7,23 +7,24 @@ groceries.config(function($stateProvider) {
       url: "/landing",
       views: {
         "mainArea": { templateUrl: "views/landing.html" },
-        // "header": { templateUrl: "views/navbar.html" },
         "title": { template: "Rosie" }
       }
     })
     .state('list', {
       url: "/list",
       views: {
-        "mainArea": { templateUrl: "views/list.html" },
-        // "header": { templateUrl: "views/navbar.html" },
+        "mainArea": { templateUrl: "views/list.html",
+                      controller: "listController"
+                     },
         "title": { template: "My List" }
       }
     })
     .state('pantry', {
       url: "/pantry",
       views: {
-        "mainArea": { templateUrl: "views/pantry.html" },
-        // "header": { templateUrl: "views/navbar.html" },
+        "mainArea": { templateUrl: "views/pantry.html",
+                      controller: "listController"
+                    },
         "title": { template: "My Pantry" }
       }
     })
@@ -31,44 +32,121 @@ groceries.config(function($stateProvider) {
       url: "/recipes",
       views: {
         "mainArea": { templateUrl: "views/recipes.html" },
-        // "header": { templateUrl: "views/navbar.html" },
         "title": { template: "My Recipes" }
+      }
+    })
+    .state('household', {
+      url: "/household",
+      views: {
+        "mainArea": { templateUrl: "views/household.html" },
+        "title": { template: "My Household" }
       }
     })
     .state('account', {
       url: "/account",
       views: {
         "mainArea": { templateUrl: "views/account.html" },
-        // "header": { templateUrl: "views/navbar.html" },
         "title": { template: "My Account" }
       }
-    });
+    })
+    .state('about', {
+      url: "/about",
+      views: {
+        "mainArea": { templateUrl: "views/about.html" },
+        "title": { template: "Rosie" }
+      }
+    })
+    .state('logout', {
+      url: "/logout",
+      views: {
+        "mainArea": { templateUrl: "views/logout.html" },
+        "title": { template: "Rosie" }
+      }
+    })
 
 });
 
 groceries.controller("MainController", function($scope) {
   
-  $scope.genericList = [
-    'Eggs',
-    'Bread',
-    'Milk',
-    'Cheese',
-    'Tomatoes',
-    'Kale',
-    'Tofu',
-    'Eggplant',
-    'Lettuce',
-    'Onions',
-    'Cereal',
-    'Rice',
-    'Chicken',
-    'Shrimp'
-  ];
+  // $scope.genericList = [
+  //   'Eggs',
+  //   'Bread',
+  //   'Milk',
+  //   'Cheese',
+  //   'Tomatoes',
+  //   'Kale',
+  //   'Tofu',
+  //   'Eggplant',
+  //   'Lettuce',
+  //   'Onions',
+  //   'Cereal',
+  //   'Rice',
+  //   'Chicken',
+  //   'Shrimp'
+  // ];
 
   $scope.winter = ['Apples','Bananas','Beets','Brussels Sprouts','Cabbage'];
   $scope.spring = ['Apples','Apricots','Asparagus','Bananas','Broccoli'];
   $scope.summer = ['Apples','Apricots','Bananas','Beets','Bell Peppers'];
   $scope.fall = ['Apples','Bananas','Beets','Bell Peppers','Broccoli'];
+
+  $scope.fall = [
+    'Acorn Squash',
+    'Asian Pear',
+    'Barbados Cherries',
+    'Black Crowberries',
+    'Black Salsify',
+    'Belgian Endive',
+    'Broccoli',
+    'Brussels Sprouts',
+    'Butter Lettuce',
+    'Buttercup Squash',
+    'Butternut Squash',
+    'Cactus Pear',
+    'Cape Gooseberries',
+    'Cardoon',
+    'Cauliflower',
+    'Chayote Squash',
+    'Chinese Long Beans',
+    'Crab Apples',
+    'Cranberries',
+    'Date Plum',
+    'Delicata Squash',
+    'Diakon Radish',
+    'Endive',
+    'Feijoa',
+    'Garlic',
+    'Ginger',
+    'Grapes',
+    'Guava',
+    'Hearts of Palm',
+    'Huckleberries',
+    'Jalapeno Peppers',
+    'Jerusalem Artichoke',
+    'Jujube',
+    'Key Limes',
+    'Kohlrabi',
+    'Kumquats',
+    'Muscadine Grapes',
+    'Mushrooms',
+    'Ong Choy Spinach',
+    'Passion Fruit',
+    'Pear',
+    'Persimmons',
+    'Pineapple',
+    'Pomegranate',
+    'Pumpkin',
+    'Quince',
+    'Radicchio',
+    'Sapote',
+    'Sharon Fruit',
+    'Sugar Apple',
+    'Sunflower Kernels',
+    'Sweet Dumpling Squash',
+    'Sweet Potatoes',
+    'Swiss Chard',
+    'Turnips'
+  ];
 
   $scope.todaysMarket = {
     "Name": "West Sacramento Farmers Market",
